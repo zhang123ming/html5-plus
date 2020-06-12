@@ -2,13 +2,43 @@
 	"pages": [{
 		"path": "pages/index/index",
 		"style": {
-			"navigationBarTitleText": "uni-ui基础项目"
+			"navigationBarTitleText": "uni-ui基础项目",
+			"app-plus": {
+				// 手机端隐藏滚动条，保留滚动效果
+				"scrollIndicator": "none"
+			}
+		}
+	}, {
+		"path": "pages/picture/picture",
+		"style": {
+			"app-plus": {
+				// 手机端隐藏滚动条，保留滚动效果
+				"scrollIndicator": "none"
+			}
 		}
 	}],
+	"tabBar": {
+		"color": "#8a8a8a",
+		"selectedColor": "#d4237a",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页"
+
+			},
+			{
+				"pagePath": "pages/picture/picture",
+				"text": "搜索"
+			}
+
+		]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#007AFF",
-		"backgroundColor": "#FFFFFF"
+		"navigationBarBackgroundColor": "#000000",
+		"backgroundColor": "#FFFFFF",
+		"scrollIndicator":"none"
 	}
 }

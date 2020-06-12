@@ -53,12 +53,11 @@
 		<button type="default" @click="origin">应用安装来源</button>
 		<button type="default" @click="launchLoadedTime">获取当前应用首页加载时间</button>
 		<button type="default" @click="agreePrivacy">用户同意隐私政策</button>
-		<button type="default" @click="restart">重启当前的应用</button>
 		<button type="default" @click="setBadgeNumber">设置程序快捷方式上显示的角标数字</button>
 		<button type="default" @click="openURL">打开第三方程序</button>
 		<button type="default" @click="launchApplication">调用第三方程序</button>
 		<button type="default" @click="isApplicationExist">判断第三方程序是否存在wx</button>
-	
+		<button type="default" @click="restart">重启当前的应用</button>
 		<view>
 			{{tip}}
 		</view>
@@ -84,14 +83,32 @@
 			}
 		},
 		onLoad() {
+
 			// 监听返回按键
 			// plus.key.addEventListener("backbutton", function() {
 			// 	plus.nativeUI.alert("BackButton Key pressed!");
 			// });
-			this.setBadgeNumber();
+			// this.setBadge();
 		},
 		methods: {
-		
+			setBadge() {
+				var num = -1;
+				var timer = setInterval(() => {
+					num++;
+					if (num >= 99) {
+						num = "99++";
+						uni.showToast({
+							title: "结束" + num,
+							mask: true,
+							duration: 5000
+						})
+						clearInterval(timer);
+					}
+				}, 500)
+				// #ifdef APP-PLUS
+				plus.runtime.setBadgeNumber(num);
+				// #endif
+			},
 			// 判断第三方程序是否存在
 			isApplicationExist() {
 				if (plus.runtime.isApplicationExist({
@@ -150,10 +167,7 @@
 				// plus.runtime.openURL("https://m.jd.com/")
 				// plus.runtime.openURL("https://main.m.taobao.com/?sprefer=sypc00");
 			},
-			// 设置程序快捷方式上显示的角标数字
-			setBadgeNumber() {
-				plus.runtime.setBadgeNumber(8);
-			},
+
 			// 重启当前的应用
 			restart() {
 				plus.runtime.restart();

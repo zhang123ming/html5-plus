@@ -1,6 +1,6 @@
 {
     "name" : "test",
-    "appid" : "__UNI__EF100AA",
+    "appid" : "__UNI__EA94B6C",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -69,11 +69,7 @@
             },
             "ios" : {},
             "sdkConfigs" : {
-                "ad" : {
-                    "360" : {},
-                    "csj" : {},
-                    "gdt" : {}
-                },
+                "ad" : {},
                 "oauth" : {
                     "weixin" : {
                         "appid" : "wx7f1be46ab8322ebb",
