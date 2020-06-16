@@ -16,7 +16,17 @@
 				"scrollIndicator": "none"
 			}
 		}
-	}],
+	}    ,{
+            "path" : "pages/API/API",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/about/about",
+            "style" : {
+				
+			}
+        }
+    ],
 	"tabBar": {
 		"color": "#8a8a8a",
 		"selectedColor": "#d4237a",
@@ -30,6 +40,10 @@
 			{
 				"pagePath": "pages/picture/picture",
 				"text": "搜索"
+			},
+			{
+				"pagePath": "pages/API/API",
+				"text": "API"
 			}
 
 		]

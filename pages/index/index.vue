@@ -83,6 +83,7 @@
 			}
 		},
 		onLoad() {
+		
 
 			// 监听返回按键
 			// plus.key.addEventListener("backbutton", function() {
