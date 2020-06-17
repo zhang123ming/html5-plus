@@ -19,7 +19,6 @@
             "Maps" : {},
             "Payment" : {},
             "Messaging" : {},
-            "Share" : {},
             "Push" : {},
             "Speech" : {},
             "Statistic" : {},
@@ -79,7 +78,8 @@
                 },
                 "speech" : {
                     "ifly" : {}
-                }
+                },
+                "share" : {}
             },
             "icons" : {
                 "android" : {

@@ -5,6 +5,7 @@
 			<image src="http://img0.imgtn.bdimg.com/it/u=137628589,3436980029&fm=26&gp=0.jpg" style="width: 100px;height: 100px;"></image>
 		</view>
 		<button @click="running(step)">别跑</button>
+
 	</view>
 </template>
 

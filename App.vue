@@ -2,7 +2,7 @@
 var global = null;
 export default {
 	onLaunch: function(option) {
-		console.log('App Launch', option.scene);
+
 	},
 
 	onShow: function() {

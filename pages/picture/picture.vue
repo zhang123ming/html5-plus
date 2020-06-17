@@ -4,7 +4,7 @@
 		<view class="list" v-for="(item,index) in 100" :key="index">
 			{{item}}
 		</view>
-	</view>
+		</view>
 </template>
 
 <script>
@@ -18,6 +18,7 @@
 
 		},
 		methods: {
+			
 			capture() {
 				var pages = getCurrentPages();
 				var page = pages[pages.length - 1];
@@ -77,4 +78,5 @@
 	.list:nth-child(even) {
 		background-color: #056461;
 	}
+	
 </style>

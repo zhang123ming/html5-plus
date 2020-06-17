@@ -10,6 +10,9 @@
 		<button type="warn" @click="routerLink('zoom-out')">zoom-out</button>
 		<button type="warn" @click="routerLink('zoom-fade-out')">zoom-fade-out</button>
 		<button type="warn" @click="routerLink('pop-in')">pop-in</button>
+		<button type="warn" @click="routerlinkProgram">打开小程序</button>
+		<navigator url="../program/program"><button type="default">program</button></navigator>
+		<button type="warn" @click="getAddress">获取当前地理位置</button>
 	</view>
 </template>
 
@@ -20,19 +23,33 @@ export default {
 	},
 	onLoad() {
 		uni.getStorageInfo({
-		    success: function (res) {
-		        console.log(res.keys);
-		        console.log(res.currentSize);
-		        console.log(res.limitSize);
-		    }
+			success: function(res) {
+				// console.log(res.keys);
+				// console.log(res.currentSize);
+				// console.log(res.limitSize);
+			}
 		});
 	},
 	methods: {
+		getAddress() {
+			uni.showLoading({
+				title: '加载中。。。'
+			});
+			uni.getLocation({
+				type: 'gcj02',
+				success: function(res) {
+					uni.hideLoading();
+
+					plus.nativeUI.alert('当前位置的经度' + res.longitude);
+					plus.nativeUI.alert('当前位置的纬度' + res.latitude);
+				}
+			});
+		},
 		routerLink(e) {
-			uni.redirectTo({
+			uni.navigateTo({
 				url: '../about/about',
 				animationType: e,
-				animationDuration: 2000
+				animationDuration: 500
 			});
 		}
 	}
@@ -40,5 +57,12 @@ export default {
 </script>
 
 <style lang="scss">
-	
+button {
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 10px;
+}
+button:last-child {
+	margin-bottom: 60px;
+}
 </style>
